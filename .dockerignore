@@ -1,0 +1,11 @@
+.git
+.gitignore
+README.md
+.dockerignore
+Dockerfile
+.github
+dist
+node_modules
+terraform
+.eslintrc.js
+.prettierrc
