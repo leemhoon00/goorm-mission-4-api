@@ -8,6 +8,7 @@ export class UsersService {
 
   async insertOne(data: CreateUserDto): Promise<void> {
     await this.prisma.user.create({ data });
+    return;
   }
 
   async findAll(): Promise<GetUsersDto[]> {
