@@ -32,7 +32,3 @@ jobs:
           DATABASE_URL: postgres://postgres:postgres@localhost:5432/postgres
         run: |
           npm run test
-
-      - name: Merge to main
-        if: ${{ success() && github.event_name == 'pull_request' && github.actor == 'leemhoon00' }}
-        uses: hmarr/auto-approve-action@v3
