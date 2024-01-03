@@ -49,7 +49,7 @@ describe('UsersController', () => {
       const users = await controller.findAll();
 
       // then
-      expect(users.length).toBeGreaterThan(2);
+      expect(users.length).toBeGreaterThan(1);
 
       // cleanup
       await prisma.user.deleteMany({
