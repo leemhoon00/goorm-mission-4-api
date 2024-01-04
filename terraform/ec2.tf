@@ -32,3 +32,7 @@ resource "aws_eip_association" "bastion" {
   instance_id   = aws_instance.bastion.id
   allocation_id = aws_eip.bastion.id
 }
+
+output "bastion_public_ip" {
+  value = aws_eip.bastion.public_ip
+}

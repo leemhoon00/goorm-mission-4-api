@@ -51,3 +51,7 @@ resource "aws_db_instance" "replica" {
   backup_retention_period    = 3
   availability_zone          = "ap-northeast-2b"
 }
+
+output "eb_endpoint" {
+  value = aws_db_instance.db.endpoint
+}

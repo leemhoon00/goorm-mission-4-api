@@ -15,6 +15,11 @@ variable "zone_id" {
   type = string
 }
 
+variable "web_url" {
+  type    = string
+  default = "https://web.leemhoon00.com"
+}
+
 variable "namespace" {
   type    = string
   default = "goorm-mission-4"
