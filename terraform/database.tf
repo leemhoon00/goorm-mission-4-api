@@ -1,6 +1,6 @@
 resource "aws_db_subnet_group" "db" {
   name       = "db"
-  subnet_ids = [for subnet in module.network : subnet.database_subnet_id]
+  subnet_ids = [aws_subnet.database_a.id, aws_subnet.database_b.id]
 }
 
 resource "aws_security_group" "db" {
@@ -36,7 +36,7 @@ resource "aws_db_instance" "db" {
   auto_minor_version_upgrade = false
   vpc_security_group_ids     = [aws_security_group.db.id]
   backup_retention_period    = 3
-  availability_zone          = "ap-northeast-2${var.availability_zones[0]}"
+  availability_zone          = "ap-northeast-2a"
 }
 
 resource "aws_db_instance" "replica" {
@@ -49,5 +49,5 @@ resource "aws_db_instance" "replica" {
   auto_minor_version_upgrade = false
   vpc_security_group_ids     = [aws_security_group.db.id]
   backup_retention_period    = 3
-  availability_zone          = "ap-northeast-2${var.availability_zones[1]}"
+  availability_zone          = "ap-northeast-2b"
 }

@@ -24,7 +24,7 @@ resource "aws_instance" "bastion" {
   ami                    = var.image_id
   instance_type          = "t3.micro"
   key_name               = var.key_name
-  subnet_id              = module.network[var.availability_zones[0]].public_subnet_id
+  subnet_id              = aws_subnet.public_a.id
   vpc_security_group_ids = [aws_security_group.bastion.id]
 }
 
