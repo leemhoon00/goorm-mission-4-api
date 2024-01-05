@@ -9,3 +9,4 @@ node_modules
 terraform
 .eslintrc.js
 .prettierrc
+Jenkinsfile
