@@ -6,6 +6,6 @@ export class AppController {
 
   @Get()
   healthCheck(): string {
-    return 'OK2';
+    return 'OK3';
   }
 }
