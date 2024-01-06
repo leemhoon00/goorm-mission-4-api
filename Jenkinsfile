@@ -19,9 +19,11 @@ pipeline {
         }
 
         stage('Deploy') {
-            sh """
-                aws ecs update-service --cluster goorm-mission-4 --service goorm-mission-4 --force-new-deployment
-            """
+            steps {
+                sh """
+                    aws ecs update-service --cluster goorm-mission-4 --service goorm-mission-4 --force-new-deployment
+                """
+            }
         }
 
         stage('Clean') {
