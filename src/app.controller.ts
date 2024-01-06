@@ -4,8 +4,8 @@ import { Controller, Get } from '@nestjs/common';
 export class AppController {
   constructor() {}
 
-  // @Get()
-  // healthCheck(): string {
-  //   return 'OK3';
-  // }
+  @Get()
+  healthCheck(): string {
+    return 'OK3';
+  }
 }
